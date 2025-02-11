@@ -76,7 +76,10 @@
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
 # TODO!
-model.destroy_all
+Movie.destroy_all
+Actor.destroy_all
+Role.destroy_all
+Studio.destroy_all
 
 # Generate models and tables, according to the domain model.
 # TODO!
@@ -85,7 +88,102 @@ model.destroy_all
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
-Batman Begins
+new_studio1 = Studio.new
+
+new_studio1["name"] = "Warner Bros."
+
+new_studio1.save
+
+new_movie1 = Movie.new
+
+new_movie1 ["title"] = "Batman Begins"
+new_movie1 ["year_released"] = "2005"
+new_movie1 ["rated"] = "PG-13"
+
+new_movie1.save
+
+new_movie2 = Movie.new
+
+new_movie2 ["title"] = "The Dark Knight"
+new_movie2 ["year_released"] = "2008"
+new_movie2 ["rated"] = "PG-13"
+
+new_movie2.save
+
+new_movie3 = Movie.new
+
+new_movie3 ["title"] = "The Dark Knight Rises"
+new_movie3 ["year_released"] = "2005"
+new_movie3 ["rated"] = "PG-13"
+
+new_movie3.save
+
+
+new_actor1 = Actor.new
+
+new_actor1 ["name"] = "Christian Bale"
+
+new_actor1.save
+
+new_actor2 = Actor.new
+
+new_actor2 ["name"] = "Michael Caine"
+
+new_actor2.save
+
+new_actor3 = Actor.new
+
+new_actor3 ["name"] = "Liam Neeson"
+
+new_actor3.save
+
+new_actor4 = Actor.new
+
+new_actor4 ["name"] = "Katie Holmes"
+
+new_actor4.save
+
+new_actor5 = Actor.new
+
+new_actor5 ["name"] = "Gary Oldman"
+
+new_actor5.save
+
+new_actor6 = Actor.new
+
+new_actor6 ["name"] = "Heath Ledger"
+
+new_actor6.save
+
+new_actor7 = Actor.new
+
+new_actor7 ["name"] = "Aaron Eckhart"
+
+new_actor7.save
+
+new_actor8 = Actor.new
+
+new_actor8 ["name"] = "Maggie Gyllenhaal"
+
+new_actor8.save
+
+new_actor9 = Actor.new
+
+new_actor9 ["name"] = "Tom Hardy"
+
+new_actor9.save
+
+new_actor10 = Actor.new
+
+new_actor10 ["name"] = "Joseph Gordon-Levitt"
+
+new_actor10.save
+
+new_actor11 = Actor.new
+
+new_actor11 ["name"] = "Anne Hathaway"
+
+new_actor11.save
 
 # Prints a header for the movies output
 puts "Movies"
