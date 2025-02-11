@@ -114,7 +114,7 @@ new_movie2.save
 
 new_movie3 = Movie.new
 new_movie3 ["title"] = "The Dark Knight Rises"
-new_movie3 ["year_released"] = "2005"
+new_movie3 ["year_released"] = "2012"
 new_movie3 ["rated"] = "PG-13"
 new_movie3 ["studio_id"] = warner["id"]
 
@@ -309,19 +309,6 @@ new_role["actor_id"] = anne_hathaway ["id"]
 
 new_role.save
 
-
-all_movies = Movie.all
-puts all_movies.inspect
-
-all_studios = Studio.all
-puts all_studios.inspect
-
-all_actors = Actor.all
-puts all_actors.inspect
-
-all_roles = Role.all
-puts all_roles.inspect
-
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
@@ -329,6 +316,17 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
+
+warner_movies = Movie.where({"studio_id" => warner["id"]})
+
+for movie in warner_movies
+    title = movie["title"]
+    year_released = movie["year_released"]
+    rated = movie["rated"]
+    studio_name = movie.studio.name
+    puts "#{title.ljust(25)} #{year_released.ljust(6)} #{rated.ljust(6)} #{studio_name}"
+end
+
 
 
 # Prints a header for the cast output
@@ -339,3 +337,12 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
+cast = Role.all
+
+for role in cast
+    title = role.movie.title
+    actor = role.actor.name
+    character = role.character_name
+    puts "#{title.ljust(25)} #{actor.ljust(20)} #{character}"
+end
