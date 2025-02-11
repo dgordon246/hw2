@@ -94,96 +94,233 @@ new_studio1["name"] = "Warner Bros."
 
 new_studio1.save
 
-new_movie1 = Movie.new
+warner = Studio.find_by({ "name" => "Warner Bros."})
 
+new_movie1 = Movie.new
 new_movie1 ["title"] = "Batman Begins"
 new_movie1 ["year_released"] = "2005"
 new_movie1 ["rated"] = "PG-13"
+new_movie1 ["studio_id"] = warner["id"]
 
 new_movie1.save
 
 new_movie2 = Movie.new
-
 new_movie2 ["title"] = "The Dark Knight"
 new_movie2 ["year_released"] = "2008"
 new_movie2 ["rated"] = "PG-13"
+new_movie2 ["studio_id"] = warner["id"]
 
 new_movie2.save
 
 new_movie3 = Movie.new
-
 new_movie3 ["title"] = "The Dark Knight Rises"
 new_movie3 ["year_released"] = "2005"
 new_movie3 ["rated"] = "PG-13"
+new_movie3 ["studio_id"] = warner["id"]
 
 new_movie3.save
 
 
-new_actor1 = Actor.new
+new_actor = Actor.new
+new_actor ["name"] = "Christian Bale"
 
-new_actor1 ["name"] = "Christian Bale"
+new_actor.save
+christian_bale = Actor.find_by({ "name" => "Christian Bale" })
 
-new_actor1.save
+new_actor = Actor.new
+new_actor ["name"] = "Michael Caine"
 
-new_actor2 = Actor.new
+new_actor.save
+michael_caine = Actor.find_by({ "name" => "Michael Caine" })
 
-new_actor2 ["name"] = "Michael Caine"
+new_actor = Actor.new
+new_actor ["name"] = "Liam Neeson"
 
-new_actor2.save
+new_actor.save
+liam_neeson = Actor.find_by({ "name" => "Liam Neeson" })
 
-new_actor3 = Actor.new
+new_actor = Actor.new
+new_actor ["name"] = "Katie Holmes"
 
-new_actor3 ["name"] = "Liam Neeson"
+new_actor.save
+katie_holmes = Actor.find_by({ "name" => "Katie Holmes" })
 
-new_actor3.save
+new_actor = Actor.new
+new_actor ["name"] = "Gary Oldman"
 
-new_actor4 = Actor.new
+new_actor.save
+gary_oldman = Actor.find_by({ "name" => "Gary Oldman" })
 
-new_actor4 ["name"] = "Katie Holmes"
+new_actor = Actor.new
+new_actor ["name"] = "Heath Ledger"
 
-new_actor4.save
+new_actor.save
+heath_ledger = Actor.find_by({ "name" => "Heath Ledger" })
 
-new_actor5 = Actor.new
+new_actor = Actor.new
+new_actor ["name"] = "Aaron Eckhart"
 
-new_actor5 ["name"] = "Gary Oldman"
+new_actor.save
+aaron_eckhart = Actor.find_by({ "name" => "Aaron Eckhart" })
 
-new_actor5.save
+new_actor = Actor.new
+new_actor ["name"] = "Maggie Gyllenhaal"
 
-new_actor6 = Actor.new
+new_actor.save
+maggie_gyllenhaal = Actor.find_by({ "name" => "Maggie Gyllenhaal" })
 
-new_actor6 ["name"] = "Heath Ledger"
+new_actor = Actor.new
+new_actor ["name"] = "Tom Hardy"
 
-new_actor6.save
+new_actor.save
+tom_hardy = Actor.find_by({ "name" => "Tom Hardy" })
 
-new_actor7 = Actor.new
+new_actor = Actor.new
+new_actor ["name"] = "Joseph Gordon-Levitt"
 
-new_actor7 ["name"] = "Aaron Eckhart"
+new_actor.save
+joseph_gordon_levitt = Actor.find_by({ "name" => "Joseph Gordon-Levitt" })
 
-new_actor7.save
+new_actor = Actor.new
+new_actor ["name"] = "Anne Hathaway"
 
-new_actor8 = Actor.new
+new_actor.save
+anne_hathaway = Actor.find_by({ "name" => "Anne Hathaway" })
 
-new_actor8 ["name"] = "Maggie Gyllenhaal"
+begins = Movie.find_by({ "title" => "Batman Begins"})
 
-new_actor8.save
+new_role = Role.new
+new_role ["character_name"] = "Bruce Wayne"
+new_role["movie_id"] = begins ["id"]
+new_role["actor_id"] = christian_bale ["id"]
 
-new_actor9 = Actor.new
+new_role.save
 
-new_actor9 ["name"] = "Tom Hardy"
+new_role = Role.new
+new_role ["character_name"] = "Alfred"
+new_role["movie_id"] = begins ["id"]
+new_role["actor_id"] = michael_caine ["id"]
 
-new_actor9.save
+new_role.save
 
-new_actor10 = Actor.new
+new_role = Role.new
+new_role ["character_name"] = "Ra's Al Ghul"
+new_role["movie_id"] = begins ["id"]
+new_role["actor_id"] = liam_neeson ["id"]
 
-new_actor10 ["name"] = "Joseph Gordon-Levitt"
+new_role.save
 
-new_actor10.save
+new_role = Role.new
+new_role ["character_name"] = "Rachel Dawes"
+new_role["movie_id"] = begins ["id"]
+new_role["actor_id"] = katie_holmes ["id"]
 
-new_actor11 = Actor.new
+new_role.save
 
-new_actor11 ["name"] = "Anne Hathaway"
+new_role = Role.new
 
-new_actor11.save
+new_role ["character_name"] = "Commissioner Gordon"
+new_role["movie_id"] = begins ["id"]
+new_role["actor_id"] = gary_oldman ["id"]
+
+new_role.save
+
+knight = Movie.find_by({ "title" => "The Dark Knight"})
+
+new_role = Role.new
+
+new_role ["character_name"] = "Bruce Wayne"
+new_role["movie_id"] = knight ["id"]
+new_role["actor_id"] = christian_bale ["id"]
+
+new_role.save
+
+new_role = Role.new
+
+new_role ["character_name"] = "Joker"
+new_role["movie_id"] = knight ["id"]
+new_role["actor_id"] = heath_ledger ["id"]
+
+new_role.save
+
+new_role = Role.new
+
+new_role ["character_name"] = "Harvey Dent"
+new_role["movie_id"] = knight ["id"]
+new_role["actor_id"] = aaron_eckhart ["id"]
+
+new_role.save
+
+new_role = Role.new
+
+new_role ["character_name"] = "Alfred"
+new_role["movie_id"] = knight ["id"]
+new_role["actor_id"] = michael_caine ["id"]
+
+new_role.save
+
+new_role = Role.new
+
+new_role ["character_name"] = "Rachel Dawes"
+new_role["movie_id"] = knight ["id"]
+new_role["actor_id"] = maggie_gyllenhaal ["id"]
+
+new_role.save
+
+rises = Movie.find_by({ "title" => "The Dark Knight Rises"})
+
+new_role = Role.new
+
+new_role ["character_name"] = "Bruce Wayne"
+new_role["movie_id"] = rises ["id"]
+new_role["actor_id"] = christian_bale ["id"]
+
+new_role.save
+
+new_role = Role.new
+
+new_role ["character_name"] = "Commissioner Gordon"
+new_role["movie_id"] = rises ["id"]
+new_role["actor_id"] = gary_oldman ["id"]
+
+new_role.save
+
+new_role = Role.new
+
+new_role ["character_name"] = "Bane"
+new_role["movie_id"] = rises ["id"]
+new_role["actor_id"] = tom_hardy ["id"]
+
+new_role.save
+
+new_role = Role.new
+
+new_role ["character_name"] = "John Blake"
+new_role["movie_id"] = rises ["id"]
+new_role["actor_id"] = joseph_gordon_levitt ["id"]
+
+new_role.save
+
+new_role = Role.new
+
+new_role ["character_name"] = "Selina Kyle"
+new_role["movie_id"] = rises ["id"]
+new_role["actor_id"] = anne_hathaway ["id"]
+
+new_role.save
+
+
+all_movies = Movie.all
+puts all_movies.inspect
+
+all_studios = Studio.all
+puts all_studios.inspect
+
+all_actors = Actor.all
+puts all_actors.inspect
+
+all_roles = Role.all
+puts all_roles.inspect
 
 # Prints a header for the movies output
 puts "Movies"
@@ -192,6 +329,7 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
+
 
 # Prints a header for the cast output
 puts ""
